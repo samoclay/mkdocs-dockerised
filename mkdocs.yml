@@ -32,7 +32,6 @@ plugins:
         repository: 
         branch: main
         token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
-
 markdown_extensions: 
   - meta
   - admonition
