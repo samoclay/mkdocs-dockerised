@@ -4,40 +4,31 @@ dev_addr: '127.0.0.1:8000'
 
 theme:
   name: material
-
   palette: 
     primary: 'white'
     accent: 'blue'
   logo: 'some-logo.gif'
   features:
     tabs: true
-
 repo_name: 'Github repository'
-
 edit_uri: tree/main/docs
-
 extra_javascript:
   - https://code.jquery.com/jquery-3.3.1.slim.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
-
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default/min.css
-
 plugins:
-    - search
-    - awesome-pages:
+  - search:
+  - awesome-pages:
       collapse_single_pages: true
-    - git-committers:
-        enterprise_hostname: 
-        repository: 
-        branch: main
-        token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
-
+  - git-committers:
+      enterprise_hostname: 
+      repository: 
+      branch: main
+#     token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 markdown_extensions: 
-  - meta
-  - admonition
   - toc:
-    permalink: true
+      permalink: true
   - codehilite: 
       linenums: true
   - markdown_include.include:
@@ -49,5 +40,5 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.snippets
-  - pymdownx.inhighlite
+  - pymdownx.inlinehilite
   - footnotes
