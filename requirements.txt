@@ -1,0 +1,9 @@
+mdocs
+git+https://github.com/ojaques/mkdocs-git-committers-plugin
+git+https://github.com/mementum/lightgallery-markdown.git
+pymdown-extensions
+pygments
+markdown-include
+mkdocs-macros-plugin
+mkdocs-pdf-export-plugin
+mkdocs-awesome-pages-plugin
