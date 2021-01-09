@@ -14,7 +14,7 @@ theme:
 
 repo_name: 'Github repository'
 
-edit_uri: tree/master/docs
+edit_uri: tree/main/docs
 
 extra_javascript:
   - https://code.jquery.com/jquery-3.3.1.slim.min.js
@@ -30,7 +30,7 @@ plugins:
     - git-committers:
         enterprise_hostname: 
         repository: 
-        branch: master
+        branch: main
         token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
 markdown_extensions: 
