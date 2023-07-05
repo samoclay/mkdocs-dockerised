@@ -1,46 +1,46 @@
 # mkdocs-dockerised
-a template people can use in order to easily serve documents locally in a docker container with all the required pip packages
+
+A template people can use to easily serve documents locally in a Docker container with all the required `pip` packages.
 
 - Clone
-- Add some markdown documents into the docs folder.
-- run `mkdocs serve --livereload --dev-addr=0.0.0.0:8000`
-
-add build commands
-
+- Add some markdown documents into the docs folder
+- Build the image
+- Run the image
+  
 ## Pre-requisites
 
-Docker installed and running on your machine.
+Docker is installed and running on your machine.
 
-1. Build the container locally in the directory containing the dockerfile
-```
-docker build --nocache -t mkdocs-dockerised/template:1.2 .
-```
+## Detailed instructions
 
-2. Use `Docker Run` to bind your localhost port 127.0.0.1:8000 <---> Docker Container port 8888 
-```
-docker run -it -p 8888:8000 --mount type=bind,source="/Users/pathtoclonedrepository",target=/mnt/mynotes mkdocs-dockerised/template:1.2
-```
+1. Build the container locally in the directory containing the Dockerfile
 
-3. Serve the docs 
+    ```bash
+    docker build --no-cache -t mkdocs-dockerised/template:1.2 .
+    ```
 
-*Note: i plan to put this tasks inside the dockerfile somehow using CMD (i.e run post-build commands in the container during the run stage).*
-```
-mkdocs serve --livereload --dev-addr='0.0.0.0:8888'
-```
+2. Use `Docker run` to bind your localhost port 127.0.0.1:8888 <---> Docker Container port 8000
 
-Then open browser and head to `http://127.0.0.1:8888/`
+    ```bash
+    docker run -d -p 8888:8000 --mount type=bind,source=/path/to/cloned/repository,target=/mnt/mynotes mkdocs-dockerised/template:1.2
+    ```
 
-This needs some tweaking so please raise an issue if you know how this can be fixed. :)
+Then open the browser and head to `http://127.0.0.1:8888/`
 
-### Tips
+This needs some tweaking so please raise an issue if you know how this can be fixed 🙂.
 
-Cleanup un-used docker files if using `--nocache` 
-```
+## Tips
+
+Cleanup un-used docker files if using `--no-cache`
+
+```bash
 docker ps
 ```
+
+```bash
+docker image ls
 ```
-docker images
-```
-```
-docker rmi -f <ImageID>:tag
+
+```bash
+docker rmi -f image_id:tag
 ```
